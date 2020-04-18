@@ -18,7 +18,7 @@ public class GirisDAO {
             PreparedStatement ps = conn.prepareStatement(sorgu);
             ps.setString(1, p_kullanici);
             ResultSet rs = ps.executeQuery();
-            
+
             while (rs.next()) {
                 vtSifre = rs.getString("sifre");
             }

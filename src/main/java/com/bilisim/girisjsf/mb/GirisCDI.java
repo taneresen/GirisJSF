@@ -1,6 +1,7 @@
 
 package com.bilisim.girisjsf.mb;
 
+import com.bilisim.personelweb.dao.GirisDAO;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
@@ -33,9 +34,16 @@ public class GirisCDI {
     
     public String girisKontrol()
     {
+        boolean sonuc = GirisDAO.giriseYetkilimi(kullanici, sifre);
+        if (sonuc) {
+            return "menu.xhtml";
+            
+        } else {
+            return "giris.xhtml";
+        }
     
     
-    return "menu.xhtml";
+    
     }
     
     
